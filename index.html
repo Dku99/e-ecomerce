@@ -1,9 +1,14 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="es">
+=======
+<html lang="en">
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<<<<<<< HEAD
     <meta name="description" content="TechStore - Tu tienda de tecnología favorita. Laptops, smartphones y más.">
     <title>TechStore - Tecnología al mejor precio</title>
 
@@ -18,12 +23,29 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Nuestros estilos -->
+=======
+    <meta name="description" content=" TechStore - Tienda en línea de productos tecnológicos.">
+    <title>TechStore - Tecnología al mejor precio</title>
+
+    <!-- preconnect para Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- google fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <!-- estilos propios -->
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/components.css">
     <link rel="stylesheet" href="CSS/responsive.css">
 </head>
 
 <body>
+<<<<<<< HEAD
     <!-- ========== HEADER ========== -->
     <header class="header" id="header">
         <div class="container">
@@ -106,6 +128,81 @@
             </div>
 
             <!-- Navegación principal -->
+=======
+    <!-- header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header_logo">
+                <a href="index.html" class="logo">
+                    <i class=" fas fa-laptop-code"></i>
+                    <span>TechStore</span>
+                </a>
+            </div>
+            <!-- barra de busqueda   -->
+            <div class="header_search">
+                <form class="search-form" id="searchForm">
+                    <input type="text" id="searcchInput" placeholder="Buscar productos..." class="search-input"
+                        autocomplete="off">
+                    <!-- aria-label para botones sin texto -->
+                    <button type="submit" class="search-btn" aria-label="Buscar">
+
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+                <!-- sugerencia de busqueda -->
+                <div class="search-suggestions" id="searchSuggestions">
+                    <!-- llamar dinamicamente con JS -->
+                </div>
+            </div>
+
+            <!-- navegacion  y acciones -->
+            <nav class="header_nav">
+                <div class="nav-actions">
+                    <!-- usuario -->
+                    <div class="user-menu" id="userMenu">
+                        <button class="user-btn" id="userBtn" aria-label="Cuenta de usuario">
+                            <i class="fas fa-user"></i>
+                            <span class="user-name" id="UserName">Mi Cuenta</span>
+                        </button>
+
+                        <!-- dropdown menu -->
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="user-dropDown_guest" id="guestMenu">
+                                <a href="pages/login.html" class="dropdown-link">
+                                    <i class="fas fa-sign-in-alt"></i>Iniciar Sesión
+                                </a>
+                                <a href="pages/registrer.html" class="dropdown-link">
+                                    <i class="fas fa-user-plus"></i>Registrarse
+                                </a>
+                            </div>
+                            <div class="user-dropdown_logged" id="loggedMenu" style="display: none;">
+                                <a href="pages/profile.html" class="dropdown-link">
+                                    <i class="fas fa-user-circle"></i>Mi Perfil
+                                </a>
+                                <a href="pages/orders.html" class="dropdown-link">
+                                    <i class="fas fa-shopping-bag"></i>Mis Pedidos
+                                </a>
+                                <button class="dropdown-link logout-btn" id="loggoutBtn">
+                                    <i class="fas fa-sign-out-alt"></i>Cerrar Sesión
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- carrito de compras -->
+                    <div class="cart-menu">
+                        <button class="cart-btn" id="cartBtn" aria-label="Carrito de compras">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </button>
+                    </div>
+
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                        <span></span><span></span><span></span>
+                    </button>
+                </div>
+            </nav>
+            <!-- navegacion principal -->
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
             <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="#" class="nav-link active" data-category="all">Todos</a></li>
@@ -117,6 +214,7 @@
             </nav>
         </div>
     </header>
+<<<<<<< HEAD
 
     <!-- ========== MAIN CONTENT ========== -->
     <main class="main">
@@ -155,6 +253,33 @@
 
         <!-- Filtros y Búsqueda -->
         <section class="filters-section" id="filtersSection">
+=======
+    <main class="main">
+        <section class="hero" id="heroSection">
+            <div class="hero_slider">
+                <div class="hero_slide active">
+                    <div class="container">
+                        <div class="hero_content">
+                            <h1 class="hero_title"> Las mejores <span class="highlight">ofertas</span> en tecnológia
+                            </h1>
+                            <p class="hero_subtitle">Encuentra laptops, Smartphones y accesorios de las mejores marcas
+                                al precio más competitivo del mercado.</p>
+                            <div class="hero_action">
+                                <button class="btn btn--primary" onclick="scrollToProducts()">Ver Productos</button>
+                                <button class="btn btn--secondary">Ofertas Especiales</button>
+                            </div>
+                        </div>
+                        <div class="hero__image">
+                            <img src="images/banners/" alt="Tecnología moderna" loading="lazy">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </section>
+        <!-- filtros y busqueda -->
+        <section class="filters-section">
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
             <div class="container">
                 <div class="filters">
                     <div class="filters__group">
@@ -168,6 +293,7 @@
                     </div>
 
                     <div class="filters__group">
+<<<<<<< HEAD
                         <label for="priceRange">Rango de precio:</label>
                         <div class="price-filter">
                             <input type="range" id="priceRange" min="0" max="50000" value="50000" class="price-slider">
@@ -180,25 +306,52 @@
                     <div class="filters__actions">
                         <button class="btn btn--outline" id="clearFilters">
                             <i class="fas fa-times"></i> Limpiar filtros
+=======
+                        <label for="princeRange">Rango de precio:</label>
+                        <div class="price-filter">
+                            <input type="range" id="priceRange" min="0" max="5000" class="price-slider" value="5000">
+                            <div class="price-display">
+                                <span>$0</span> - <span id="maxPRiceDisplay">$50,000</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="filters__actions">
+                        <button class="btn btn--outline" id="clearFilters">
+                            <i class="fas fa-times"></i>Limpiar Filtros
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
                         </button>
                     </div>
                 </div>
             </div>
+<<<<<<< HEAD
         </section>
 
         <!-- Productos -->
+=======
+
+        </section>
+        <!-- productos -->
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
         <section class="products-section" id="productsSection">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Nuestros Productos</h2>
+<<<<<<< HEAD
                     <p class="section-subtitle">Descubre la última tecnología</p>
                 </div>
 
                 <!-- Loading spinner -->
+=======
+                    <p class="section-subtitle">Explora nuestra amplia gama de productos tecnológicos.</p>
+                </div>
+
+                <!-- loading spinner -->
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
                 <div class="loading-spinner" id="loadingSpinner">
                     <div class="spinner"></div>
                     <p>Cargando productos...</p>
                 </div>
+<<<<<<< HEAD
 
                 <!-- Grid de productos -->
                 <div class="products-grid" id="productsGrid">
@@ -221,22 +374,46 @@
     </main>
 
     <!-- ========== FOOTER ========== -->
+=======
+                <div class="products-grid" id="productsGrid">
+                    <!-- llamar dinamicamente con JS -->
+                </div>
+                <div class="no-products" id="noProducts" style="display: none;">
+
+                    <p>No se encontraron productos que coincidan con los criterios de búsqueda.</p>
+                </div>
+                <div class="pagination" id="pagination">
+                    <!-- llamar dinamicamente con JS -->
+                </div>
+            </div>
+        </section>
+
+    </main>
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
                 <div class="footer__section">
                     <h3 class="footer__title">TechStore</h3>
+<<<<<<< HEAD
                     <p class="footer__text">
                         Tu tienda de confianza para productos tecnológicos de calidad
                         al mejor precio del mercado.
                     </p>
+=======
+                    <p class="footer__description">Tu tienda en línea de productos tecnológicos. Encuentra las
+                        mejores ofertas en laptops, smartphones y accesorios.</p>
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
                 <div class="footer__section">
                     <h4 class="footer__subtitle">Categorías</h4>
                     <ul class="footer__list">
@@ -246,17 +423,27 @@
                         <li><a href="#">Tablets</a></li>
                     </ul>
                 </div>
+<<<<<<< HEAD
 
+=======
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
                 <div class="footer__section">
                     <h4 class="footer__subtitle">Ayuda</h4>
                     <ul class="footer__list">
                         <li><a href="#">Contacto</a></li>
                         <li><a href="#">Preguntas frecuentes</a></li>
+<<<<<<< HEAD
                         <li><a href="#">Envíos</a></li>
                         <li><a href="#">Devoluciones</a></li>
                     </ul>
                 </div>
 
+=======
+                        <li><a href="#">Envios</a></li>
+                        <li><a href="#">Devoluciones</a></li>
+                    </ul>
+                </div>
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
                 <div class="footer__section">
                     <h4 class="footer__subtitle">Newsletter</h4>
                     <p class="footer__text">
@@ -268,6 +455,7 @@
                     </form>
                 </div>
             </div>
+<<<<<<< HEAD
 
             <div class="footer__bottom">
                 <p>&copy; 2024 TechStore. Todos los derechos reservados.</p>
@@ -277,12 +465,21 @@
 
     <!-- ========== CART SIDEBAR ========== -->
     <div class="cart-sidebar" id="cartSidebar">
+=======
+            <div class="footer__bottom">
+                <p> &copy; 2025 TechStore. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+    <div class="cart-sidebar" id="cartsidebar">
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
         <div class="cart-sidebar__header">
             <h3>Carrito de Compras</h3>
             <button class="cart-close" id="cartClose">
                 <i class="fas fa-times"></i>
             </button>
         </div>
+<<<<<<< HEAD
 
         <div class="cart-sidebar__content">
             <div class="cart-items" id="cartItems">
@@ -298,6 +495,20 @@
             </div>
         </div>
 
+=======
+        <div class="cart-sidebar__content">
+            <div class="cart-items" id="cartItems">
+                <!-- se cargan dinamicamente -->
+            </div>
+            <div class="cart-empty" id="cartEmpty">
+                <i class="fas fa-shopping-cart"></i>
+                <p>Tu carrito esta vacio</p>
+                <button class=" btn btn--primary" onclick="closeCart()">
+                    Seguir Comprando
+                </button>
+            </div>
+        </div>
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
         <div class="cart-sidebar__footer" id="cartFooter" style="display: none;">
             <div class="cart-total">
                 <div class="total-line">
@@ -308,6 +519,7 @@
                     <span>Total:</span>
                     <span id="cartTotal">$0.00</span>
                 </div>
+<<<<<<< HEAD
             </div>
             <button class="btn btn--primary btn--full" onclick="goToCheckout()">
                 Proceder al Pago
@@ -324,6 +536,21 @@
     <script src="js/cart.js"></script>
     <script src="js/products.js"></script>
     <script src="js/main.js"></script>
+=======
+                <button class="btn btn--primary btn--full" onclick="goToCheckout()">
+                    Proceder al Pago
+                </button>
+            </div>
+        </div>
+        <div class="overlay" id="overlay"></div>
+
+        <script src="JS/auth.js"></script>
+        <script src="JS/utils.js"></script>
+        <script src="JS/cart.js"></script>
+        <script src="JS/products.js"></script>
+        <script src="JS/main.js"></script>
+
+>>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
 </body>
 
 </html>
