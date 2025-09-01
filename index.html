@@ -1,102 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content=" TechStore - Tienda en línea de productos tecnológicos.">
+    <meta name="description" content="TechStore - Tu tienda de tecnología favorita. Laptops, smartphones y más.">
     <title>TechStore - Tecnología al mejor precio</title>
 
-    <!-- preconnect para Google Fonts -->
+    <!-- Preconnect para optimización -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Font Awesome para iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- estilos propios -->
+    <!-- Nuestros estilos -->
     <link rel="stylesheet" href="CSS/style.css">
     <link rel="stylesheet" href="CSS/components.css">
     <link rel="stylesheet" href="CSS/responsive.css">
 </head>
 
 <body>
-    <!-- header -->
+    <!-- ========== HEADER ========== -->
     <header class="header" id="header">
         <div class="container">
-            <div class="header_logo">
-                <a href="index.html" class="logo">
-                    <i class=" fas fa-laptop-code"></i>
-                    <span>TechStore</span>
-                </a>
-            </div>
-            <!-- barra de busqueda   -->
-            <div class="header_search">
-                <form class="search-form" id="searchForm">
-                    <input type="text" id="searcchInput" placeholder="Buscar productos..." class="search-input"
-                        autocomplete="off">
-                    <!-- aria-label para botones sin texto -->
-                    <button type="submit" class="search-btn" aria-label="Buscar">
-
-                        <i class="fas fa-search"></i>
-                    </button>
-                </form>
-                <!-- sugerencia de busqueda -->
-                <div class="search-suggestions" id="searchSuggestions">
-                    <!-- llamar dinamicamente con JS -->
+            <div class="header__content">
+                <!-- Logo -->
+                <div class="header__logo">
+                    <a href="index.html" class="logo">
+                        <i class="fas fa-laptop-code"></i>
+                        <span>TechStore</span>
+                    </a>
                 </div>
-            </div>
 
-            <!-- navegacion  y acciones -->
-            <nav class="header_nav">
-                <div class="nav-actions">
-                    <!-- usuario -->
-                    <div class="user-menu" id="userMenu">
-                        <button class="user-btn" id="userBtn" aria-label="Cuenta de usuario">
-                            <i class="fas fa-user"></i>
-                            <span class="user-name" id="UserName">Mi Cuenta</span>
+                <!-- Barra de búsqueda -->
+                <div class="header__search">
+                    <form class="search-form" id="searchForm">
+                        <input type="text" id="searchInput" placeholder="Buscar productos..." class="search-input"
+                            autocomplete="off">
+                        <button type="submit" class="search-btn" aria-label="Buscar">
+                            <i class="fas fa-search"></i>
                         </button>
+                    </form>
 
-                        <!-- dropdown menu -->
-                        <div class="user-dropdown" id="userDropdown">
-                            <div class="user-dropDown_guest" id="guestMenu">
-                                <a href="pages/login.html" class="dropdown-link">
-                                    <i class="fas fa-sign-in-alt"></i>Iniciar Sesión
-                                </a>
-                                <a href="pages/registrer.html" class="dropdown-link">
-                                    <i class="fas fa-user-plus"></i>Registrarse
-                                </a>
-                            </div>
-                            <div class="user-dropdown_logged" id="loggedMenu" style="display: none;">
-                                <a href="pages/profile.html" class="dropdown-link">
-                                    <i class="fas fa-user-circle"></i>Mi Perfil
-                                </a>
-                                <a href="pages/orders.html" class="dropdown-link">
-                                    <i class="fas fa-shopping-bag"></i>Mis Pedidos
-                                </a>
-                                <button class="dropdown-link logout-btn" id="loggoutBtn">
-                                    <i class="fas fa-sign-out-alt"></i>Cerrar Sesión
-                                </button>
+                    <!-- Sugerencias de búsqueda -->
+                    <div class="search-suggestions" id="searchSuggestions">
+                        <!-- Se llena dinámicamente con JS -->
+                    </div>
+                </div>
+
+                <!-- Navegación y acciones -->
+                <nav class="header__nav">
+                    <div class="nav-actions">
+                        <!-- Usuario -->
+                        <div class="user-menu" id="userMenu">
+                            <button class="user-btn" id="userBtn" aria-label="Cuenta de usuario">
+                                <i class="fas fa-user"></i>
+                                <span class="user-name" id="userName">Mi Cuenta</span>
+                            </button>
+
+                            <!-- Dropdown menu -->
+                            <div class="user-dropdown" id="userDropdown">
+                                <div class="user-dropdown__guest" id="guestMenu">
+                                    <a href="pages/login.html" class="dropdown-link">
+                                        <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                                    </a>
+                                    <a href="pages/register.html" class="dropdown-link">
+                                        <i class="fas fa-user-plus"></i> Registrarse
+                                    </a>
+                                </div>
+
+                                <div class="user-dropdown__logged" id="loggedMenu" style="display: none;">
+                                    <a href="pages/profile.html" class="dropdown-link">
+                                        <i class="fas fa-user-circle"></i> Mi Perfil
+                                    </a>
+                                    <a href="pages/orders.html" class="dropdown-link">
+                                        <i class="fas fa-shopping-bag"></i> Mis Pedidos
+                                    </a>
+                                    <button class="dropdown-link logout-btn" id="logoutBtn">
+                                        <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                                    </button>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <!-- carrito de compras -->
-                    <div class="cart-menu">
-                        <button class="cart-btn" id="cartBtn" aria-label="Carrito de compras">
-                            <i class="fas fa-shopping-cart"></i>
-                            <span class="cart-count" id="cartCount">0</span>
+
+                        <!-- Carrito -->
+                        <div class="cart-menu">
+                            <button class="cart-btn" id="cartBtn" aria-label="Carrito de compras">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count" id="cartCount">0</span>
+                            </button>
+                        </div>
+
+                        <!-- Menú móvil toggle -->
+                        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menú">
+                            <span></span>
+                            <span></span>
+                            <span></span>
                         </button>
                     </div>
+                </nav>
+            </div>
 
-                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
-                        <span></span><span></span><span></span>
-                    </button>
-                </div>
-            </nav>
-            <!-- navegacion principal -->
+            <!-- Navegación principal -->
             <nav class="main-nav" id="mainNav">
                 <ul class="nav-list">
                     <li><a href="#" class="nav-link active" data-category="all">Todos</a></li>
@@ -108,31 +117,44 @@
             </nav>
         </div>
     </header>
+
+    <!-- ========== MAIN CONTENT ========== -->
     <main class="main">
+        <!-- Hero Section -->
         <section class="hero" id="heroSection">
-            <div class="hero_slider">
-                <div class="hero_slide active">
+            <div class="hero__slider">
+                <div class="hero__slide active">
                     <div class="container">
-                        <div class="hero_content">
-                            <h1 class="hero_title"> Las mejores <span class="highlight">ofertas</span> en tecnológia
-                            </h1>
-                            <p class="hero_subtitle">Encuentra laptops, Smartphones y accesorios de las mejores marcas
-                                al precio más competitivo del mercado.</p>
-                            <div class="hero_action">
-                                <button class="btn btn--primary" onclick="scrollToProducts()">Ver Productos</button>
-                                <button class="btn btn--secondary">Ofertas Especiales</button>
+                        <div class="hero__content">
+                            <div class="hero__text">
+                                <h1 class="hero__title">
+                                    Las mejores <span class="highlight">ofertas</span>
+                                    en tecnología
+                                </h1>
+                                <p class="hero__subtitle">
+                                    Encuentra laptops, smartphones y accesorios de las mejores marcas
+                                    al precio más competitivo del mercado.
+                                </p>
+                                <div class="hero__actions">
+                                    <button class="btn btn--primary" onclick="scrollToProducts()">
+                                        Ver Productos
+                                    </button>
+                                    <button class="btn btn--secondary">
+                                        Ofertas Especiales
+                                    </button>
+                                </div>
                             </div>
-                        </div>
-                        <div class="hero__image">
-                            <img src="images/banners/" alt="Tecnología moderna" loading="lazy">
+                            <div class="hero__image">
+                                <img src="images/banners/hero-tech.jpg" alt="Tecnología moderna" loading="lazy">
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
-            </div>
         </section>
-        <!-- filtros y busqueda -->
-        <section class="filters-section">
+
+        <!-- Filtros y Búsqueda -->
+        <section class="filters-section" id="filtersSection">
             <div class="container">
                 <div class="filters">
                     <div class="filters__group">
@@ -146,63 +168,75 @@
                     </div>
 
                     <div class="filters__group">
-                        <label for="princeRange">Rango de precio:</label>
+                        <label for="priceRange">Rango de precio:</label>
                         <div class="price-filter">
-                            <input type="range" id="priceRange" min="0" max="5000" class="price-slider" value="5000">
+                            <input type="range" id="priceRange" min="0" max="50000" value="50000" class="price-slider">
                             <div class="price-display">
-                                <span>$0</span> - <span id="maxPRiceDisplay">$50,000</span>
+                                <span>$0</span> - <span id="maxPriceDisplay">$50,000</span>
                             </div>
                         </div>
                     </div>
+
                     <div class="filters__actions">
                         <button class="btn btn--outline" id="clearFilters">
-                            <i class="fas fa-times"></i>Limpiar Filtros
+                            <i class="fas fa-times"></i> Limpiar filtros
                         </button>
                     </div>
                 </div>
             </div>
-
         </section>
-        <!-- productos -->
+
+        <!-- Productos -->
         <section class="products-section" id="productsSection">
             <div class="container">
                 <div class="section-header">
                     <h2 class="section-title">Nuestros Productos</h2>
-                    <p class="section-subtitle">Explora nuestra amplia gama de productos tecnológicos.</p>
+                    <p class="section-subtitle">Descubre la última tecnología</p>
                 </div>
 
-                <!-- loading spinner -->
+                <!-- Loading spinner -->
                 <div class="loading-spinner" id="loadingSpinner">
                     <div class="spinner"></div>
                     <p>Cargando productos...</p>
                 </div>
-                <div class="products-grid" id="productsGrid">
-                    <!-- llamar dinamicamente con JS -->
-                </div>
-                <div class="no-products" id="noProducts" style="display: none;">
 
-                    <p>No se encontraron productos que coincidan con los criterios de búsqueda.</p>
+                <!-- Grid de productos -->
+                <div class="products-grid" id="productsGrid">
+                    <!-- Los productos se cargan dinámicamente con JavaScript -->
                 </div>
+
+                <!-- Mensaje cuando no hay productos -->
+                <div class="no-products" id="noProducts" style="display: none;">
+                    <i class="fas fa-search"></i>
+                    <h3>No se encontraron productos</h3>
+                    <p>Intenta ajustar los filtros de búsqueda</p>
+                </div>
+
+                <!-- Paginación -->
                 <div class="pagination" id="pagination">
-                    <!-- llamar dinamicamente con JS -->
+                    <!-- Se genera dinámicamente -->
                 </div>
             </div>
         </section>
-
     </main>
+
+    <!-- ========== FOOTER ========== -->
     <footer class="footer">
         <div class="container">
             <div class="footer__content">
                 <div class="footer__section">
                     <h3 class="footer__title">TechStore</h3>
-                    <p class="footer__description">Tu tienda en línea de productos tecnológicos. Encuentra las
-                        mejores ofertas en laptops, smartphones y accesorios.</p>
+                    <p class="footer__text">
+                        Tu tienda de confianza para productos tecnológicos de calidad
+                        al mejor precio del mercado.
+                    </p>
                     <div class="social-links">
                         <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
                         <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
                         <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     </div>
                 </div>
+
                 <div class="footer__section">
                     <h4 class="footer__subtitle">Categorías</h4>
                     <ul class="footer__list">
@@ -212,15 +246,17 @@
                         <li><a href="#">Tablets</a></li>
                     </ul>
                 </div>
+
                 <div class="footer__section">
                     <h4 class="footer__subtitle">Ayuda</h4>
                     <ul class="footer__list">
                         <li><a href="#">Contacto</a></li>
                         <li><a href="#">Preguntas frecuentes</a></li>
-                        <li><a href="#">Envios</a></li>
+                        <li><a href="#">Envíos</a></li>
                         <li><a href="#">Devoluciones</a></li>
                     </ul>
                 </div>
+
                 <div class="footer__section">
                     <h4 class="footer__subtitle">Newsletter</h4>
                     <p class="footer__text">
@@ -232,30 +268,36 @@
                     </form>
                 </div>
             </div>
+
             <div class="footer__bottom">
-                <p> &copy; 2025 TechStore. Todos los derechos reservados.</p>
+                <p>&copy; 2024 TechStore. Todos los derechos reservados.</p>
             </div>
         </div>
     </footer>
-    <div class="cart-sidebar" id="cartsidebar">
+
+    <!-- ========== CART SIDEBAR ========== -->
+    <div class="cart-sidebar" id="cartSidebar">
         <div class="cart-sidebar__header">
             <h3>Carrito de Compras</h3>
             <button class="cart-close" id="cartClose">
                 <i class="fas fa-times"></i>
             </button>
         </div>
+
         <div class="cart-sidebar__content">
             <div class="cart-items" id="cartItems">
-                <!-- se cargan dinamicamente -->
+                <!-- Items se cargan dinámicamente -->
             </div>
+
             <div class="cart-empty" id="cartEmpty">
                 <i class="fas fa-shopping-cart"></i>
-                <p>Tu carrito esta vacio</p>
-                <button class=" btn btn--primary" onclick="closeCart()">
-                    Seguir Comprando
+                <p>Tu carrito está vacío</p>
+                <button class="btn btn--primary" onclick="closeCart()">
+                    Seguir comprando
                 </button>
             </div>
         </div>
+
         <div class="cart-sidebar__footer" id="cartFooter" style="display: none;">
             <div class="cart-total">
                 <div class="total-line">
@@ -266,19 +308,22 @@
                     <span>Total:</span>
                     <span id="cartTotal">$0.00</span>
                 </div>
-                <button class="btn btn--primary btn--full" onclick="goToCheckout()">
-                    Proceder al Pago
-                </button>
             </div>
+            <button class="btn btn--primary btn--full" onclick="goToCheckout()">
+                Proceder al Pago
+            </button>
         </div>
-        <div class="overlay" id="overlay"></div>
+    </div>
 
-        <script src="JS/auth.js"></script>
-        <script src="JS/utils.js"></script>
-        <script src="JS/cart.js"></script>
-        <script src="JS/products.js"></script>
-        <script src="JS/main.js"></script>
+    <!-- Overlay para cart y modals -->
+    <div class="overlay" id="overlay"></div>
 
+    <!-- ========== SCRIPTS ========== -->
+    <script src="js/utils.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/main.js"></script>
 </body>
 
 </html>
