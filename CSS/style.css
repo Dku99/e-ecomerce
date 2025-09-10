@@ -167,7 +167,6 @@ h6 {
 p {
     margin-bottom: var(--space-4);
     color: var(--text-secondary);
-<<<<<<< HEAD
 }
 
 .btn {
@@ -612,6 +611,5 @@ header {
 .overlay.active {
     opacity: 1;
     visibility: visible;
-=======
->>>>>>> 6d86f195eab653e375cc85f73fdb7749fa2e1b33
+
 }

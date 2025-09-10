@@ -33,3 +33,27 @@
     gap: var(--space-6);
     flex-wrap: wrap;
 }
+
+.filters__group {
+    display: flex;
+    align-items: center;
+    gap: var(--space-4);
+}
+
+.filters__group label {
+    font-weight: 600;
+    color: var(--text-primary);
+    font-size: var(--font-sm);
+    white-space: nowrap;
+}
+
+.filter-select {
+    padding: var(--space-2) var(--space-4);
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-lg);
+    background-color: white;
+    font-size: var(--font-sm);
+    columns: var(--text-primary);
+    cursor: pointer;
+    transition: border-color var(--transition-fast);
+}
