@@ -1,0 +1,168 @@
+<!--==========HEADER==========-->
+<header class="header" id="header">
+    <div class="container">
+        <div class="header__content">
+            <!-- Logo -->
+            <div class="header__logo">
+                <a href="index.html" class="logo">
+                    <i class="fas fa-laptop-code"></i>
+                    <span>TechStore</span>
+                </a>
+            </div>
+
+            <!-- Barra de búsqueda -->
+            <div class="header__search">
+                <form class="search-form" id="searchForm">
+                    <input type="text" id="searchInput" placeholder="Buscar productos..." class="search-input"
+                        autocomplete="off">
+                    <button type="submit" class="search-btn" aria-label="Buscar">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </form>
+
+                <!-- Sugerencias de búsqueda -->
+                <div class="search-suggestions" id="searchSuggestions">
+                    <!-- Se llena dinámicamente con JS -->
+                </div>
+            </div>
+
+            <!-- Navegación y acciones -->
+            <nav class="header__nav">
+                <div class="nav-actions">
+                    <!-- Usuario -->
+                    <div class="user-menu" id="userMenu">
+                        <button class="user-btn" id="userBtn" aria-label="Cuenta de usuario">
+                            <i class="fas fa-user"></i>
+                            <span class="user-name" id="userName">Mi Cuenta</span>
+                        </button>
+
+                        <!-- Dropdown menu -->
+                        <div class="user-dropdown" id="userDropdown">
+                            <div class="user-dropdown__guest" id="guestMenu">
+                                <a href="pages/login.html" class="dropdown-link">
+                                    <i class="fas fa-sign-in-alt"></i> Iniciar Sesión
+                                </a>
+                                <a href="pages/register.html" class="dropdown-link">
+                                    <i class="fas fa-user-plus"></i> Registrarse
+                                </a>
+                            </div>
+
+                            <div class="user-dropdown__logged" id="loggedMenu" style="display: none;">
+                                <a href="pages/profile.html" class="dropdown-link">
+                                    <i class="fas fa-user-circle"></i> Mi Perfil
+                                </a>
+                                <a href="pages/orders.html" class="dropdown-link">
+                                    <i class="fas fa-shopping-bag"></i> Mis Pedidos
+                                </a>
+                                <button class="dropdown-link logout-btn" id="logoutBtn">
+                                    <i class="fas fa-sign-out-alt"></i> Cerrar Sesión
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Carrito -->
+                    <div class="cart-menu">
+                        <button class="cart-btn" id="cartBtn" aria-label="Carrito de compras">
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="cart-count" id="cartCount">0</span>
+                        </button>
+                    </div>
+
+                    <!-- Menú móvil toggle -->
+                    <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menú">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+
+        <!-- Navegación principal -->
+
+        <!-- header -->
+        <header class="header" id="header">
+            <div class="container">
+                <div class="header_logo">
+                    <a href="index.html" class="logo">
+                        <i class=" fas fa-laptop-code"></i>
+                        <span>TechStore</span>
+                    </a>
+                </div>
+                <!-- barra de busqueda   -->
+                <div class="header_search">
+                    <form class="search-form" id="searchForm">
+                        <input type="text" id="searcchInput" placeholder="Buscar productos..." class="search-input"
+                            autocomplete="off">
+                        <!-- aria-label para botones sin texto -->
+                        <button type="submit" class="search-btn" aria-label="Buscar">
+
+                            <i class="fas fa-search"></i>
+                        </button>
+                    </form>
+                    <!-- sugerencia de busqueda -->
+                    <div class="search-suggestions" id="searchSuggestions">
+                        <!-- llamar dinamicamente con JS -->
+                    </div>
+                </div>
+
+                <!-- navegacion  y acciones -->
+                <nav class="header_nav">
+                    <div class="nav-actions">
+                        <!-- usuario -->
+                        <div class="user-menu" id="userMenu">
+                            <button class="user-btn" id="userBtn" aria-label="Cuenta de usuario">
+                                <i class="fas fa-user"></i>
+                                <span class="user-name" id="UserName">Mi Cuenta</span>
+                            </button>
+
+                            <!-- dropdown menu -->
+                            <div class="user-dropdown" id="userDropdown">
+                                <div class="user-dropDown_guest" id="guestMenu">
+                                    <a href="pages/login.html" class="dropdown-link">
+                                        <i class="fas fa-sign-in-alt"></i>Iniciar Sesión
+                                    </a>
+                                    <a href="pages/registrer.html" class="dropdown-link">
+                                        <i class="fas fa-user-plus"></i>Registrarse
+                                    </a>
+                                </div>
+                                <div class="user-dropdown_logged" id="loggedMenu" style="display: none;">
+                                    <a href="pages/profile.html" class="dropdown-link">
+                                        <i class="fas fa-user-circle"></i>Mi Perfil
+                                    </a>
+                                    <a href="pages/orders.html" class="dropdown-link">
+                                        <i class="fas fa-shopping-bag"></i>Mis Pedidos
+                                    </a>
+                                    <button class="dropdown-link logout-btn" id="loggoutBtn">
+                                        <i class="fas fa-sign-out-alt"></i>Cerrar Sesión
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- carrito de compras -->
+                        <div class="cart-menu">
+                            <button class="cart-btn" id="cartBtn" aria-label="Carrito de compras">
+                                <i class="fas fa-shopping-cart"></i>
+                                <span class="cart-count" id="cartCount">0</span>
+                            </button>
+                        </div>
+
+                        <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Menu">
+                            <span></span><span></span><span></span>
+                        </button>
+                    </div>
+                </nav>
+                <!-- navegacion principal -->
+
+                <nav class="main-nav" id="mainNav">
+                    <ul class="nav-list">
+                        <li><a href="#" class="nav-link active" data-category="all">Todos</a></li>
+                        <li><a href="#" class="nav-link" data-category="1">Laptops</a></li>
+                        <li><a href="#" class="nav-link" data-category="2">Smartphones</a></li>
+                        <li><a href="#" class="nav-link" data-category="3">Accesorios</a></li>
+                        <li><a href="#" class="nav-link" data-category="4">Tablets</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
