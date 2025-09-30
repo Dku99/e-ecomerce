@@ -49,10 +49,18 @@
             }
         ];
 
-        // carrito de compras
+        // carrito de compras - variables globales
         let cart = JSON.parse(localStorage.getItem('cart')) || [];
+        let filteredProducts = [...products];
+
+
 
         // funcion para formatear precios
+        /**
+         * 
+         * @param {number} price -precio a formatear
+         * @returns {string} precio formateado
+         */
         function formatPrice(price) {
             return new Intl.NumberFormat('es-MX', {
                 style: 'currency',

@@ -29,28 +29,37 @@
           </div>
       </div>
   </header>
-  <!--  -->
+  <!--navigation  -->
   <nav class="navbar navbar-expand-lg navbar-custom">
       <div class="container">
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-nav me-auto">
               <li class="nav-item">
-                  <a href="#" class="nav-link"><i class="fas fa-home me-1"></i>Inicio</a>
+                  <a href="index.html" class="nav-link"><i class="fas fa-home me-1"></i>Inicio</a>
               </li>
               <li class="nav-item">
-                  <a href="#" class="nav-link"><i class="fas fa-microchip me-1"></i>Procesador</a>
+                  <a href="#" class="nav-link" onclick="filteredByCategory('procesadores')"><i
+                          class="fas fa-microchip me-1"></i>Procesador</a>
               </li>
               <li class="nav-item">
-                  <a href="#" class="nav-link"><i class="fas fa-memory me-1"></i>Tarjeta grafica</a>
+                  <a href="#" class="nav-link" onclick="filteredByCategory('graficas')"><i
+                          class="fas fa-memory me-1"></i>Tarjeta grafica</a>
               </li>
               <li class="nav-item">
-                  <a href="#" class="nav-link"><i class="fas fa-hdd me-1"></i>Almacenamiento</a>
+                  <a href="#" class="nav-link" onclick="filteredByCategory('almacenamiento')"><i
+                          class="fas fa-hdd me-1"></i>Almacenamiento</a>
               </li>
               <li class="nav-item">
-                  <a href="#" class="nav-link"><i class="fas fa-deskop me-1"></i>Monitores</a>
+                  <a href="#" class="nav-link" onclick="filteredByCategory('monitores')"><i
+                          class="fas fa-deskop me-1"></i>Monitores</a>
               </li>
+              <li class="nav-item">
+                  <a href="#" onclick="filteredByCategory('Todos')" class="nav-link">
+                      <i class="fas fa-th-large me-1"></i>Todos
+                  </a></li>
           </div>
       </div>
   </nav>
