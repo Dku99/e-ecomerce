@@ -28,25 +28,114 @@
 <body>
     <!-- header -->
     <div id="header"></div>
-
-    <!-- main content -->
-    <main class="main-content">
+    <!-- breadcrum -->
+    <section class="py-3 bg-light">
         <div class="container">
-            <h1 class="page-title">
-                <i class="fas fa-shopping-cart me-3"></i> Tu carrito de Compras
-            </h1>
-            <!-- cart content -->
-            <div id="cartContent">
-                <!-- Se llenara con JS  -->
+            <nav aria-laber="breadcrumb">
+                <ol class="breadcrumb mb-0">
+                    <li class="breadcrumb-item">
+                        <a href="../index.html">Inicio</a>
+                    </li>
+                    <li class="breadcrumb-item active" aria-current="page">
+                        <a href="">Carrito de Compras</a>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+    <!-- cart section-->
+    <section class="cart-section">
+        <div class="contanier">
+            <div class="row">
+                <div class="col-12">
+                    <div class="d-flex justify-content-between algin-items-center mb-4">
+                        <h2 class="section-title mb-0">
+                            <i class="fas fa-shopping-cart me-2"></i>Mi Carrito
+                        </h2>
+                        <button class="btn btn-outline-danger btn-sm" onclick="clearCart()">
+                            <i class="fas fa-trash me-1"></i>Vaciar Carrito
+                        </button>
+                    </div>
+                </div>
             </div>
-            <!-- continuar Compra -->
-            <div class="text-center">
-                <a href="../index.html" class="continue-shopping">
-                    <i class="fas fa-arrow-left me-2"></i>
-                    Continuar comprando</a>
+            <!-- cart itwms -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <div id="cartItems">
+                        <!-- items del carrito se cargaran aqui con JS -->
+                        <div class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Cargando carrito...</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- cart sumary -->
+                <div class="col-lg-4">
+                    <div class="cart-summary" id="cartSumary">
+                        <!-- se carga el resumen con JS -->
+                        <div class="text-center py-5">
+                            <div class="spinner-border text-primary" role="status">
+                                <span class="visually-hidden">Cargando resumen...</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- payment methods info -->
+                    <div class="mt-4 p-3 bg-light rounded">
+                        <h6 class="mb-3"><i class="fas fa-credit-card me-2"></i>Métodos de Pago</h6>
+                        <div class="d-flex gap-2 flex-wrap">
+                            <i class="fab fa-cc-visa fa-2x text-primary"></i>
+                            <i class="fab fa-cc-mastercard fa-2x text-primary"></i>
+                            <i class="fab fa-cc-amex fa-2x text-primary"></i>
+                            <i class="fab fa-cc-paypal fa-2x text-primary"></i>
+                        </div>
+                        <small class="text-muted d-block mt-2">
+                            <i class="fas fa-lock me-1"></i>Pago seguro encriptado SSl
+                        </small>
+                    </div>
+
+
+                    <!-- shipping info -->
+                    <div class="mt-3 p-3 bg-light rounded">
+                        <h6 class="mb-3">
+                            <i class="fas fa-truck me-6"></i>Información de Envío
+                        </h6>
+                        <ul class="list-unstyled small">
+                            <li class="mb2"><i class="fas fa-check text-success me-2"></i>Envío gratis en compras
+                                mayores $1,000</li>
+                            <li class="mb2"><i class="fas fa-check text-success me-2"></i>Entregas de 3-5 días hábiles
+                            </li>
+                            <li class="mb2"><i class="fas fa-check text-success me-2"></i>Seguimiento en tiempo real
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- continuar seccion de compras -->
+            <div class="row mt-4"></div>
+            <div class="col-12">
+                <div class="p-4 bg-light rounded text-center">
+                    <h5>¿Necesitas algo más?</h5>
+                    <p class="muted mb-3">Explora nuestra selección completa de productos</p>
+                    <a href="../index.html" class="btn btn-primary-custom btn-sub">
+                        <i class="fas fa-farrow-left me-2"></i>Seguir comprando
+                    </a>
+                </div>
             </div>
         </div>
-    </main>
+    </section>
+
+    <section class="products-section py-5">
+        <div class="container">
+            <h3 class="section-title">También te puede interesar</h3>
+            <div class="row" id="relatedProducts">
+                <!-- productos relacionados  -->
+            </div>
+        </div>
+    </section>
 
     <!-- footer -->
     <div id="footer"></div>
