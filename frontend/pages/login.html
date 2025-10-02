@@ -4,39 +4,178 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
+    <title>Iniciar Sesion</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Font Awesome para iconos -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-    <!-- Nuestros estilos -->
-    <meta name="description" content=" TechStore - Tienda en línea de productos tecnológicos.">
-    <title>TechStore - Tecnología al mejor precio</title>
-
-    <!-- preconnect para Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- google fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
-
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-
-    <!-- estilos css -->
+    <!-- estilos propios -->
     <link rel="stylesheet" href="../CSS/style.css">
-
-
 </head>
 
 <body>
-    <div id="header-container">
+    <!-- header -->
+    <div id="header"></div>
+    <!-- login section -->
+    <section class="py-5 login-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="row bg-white rounded-4 shadow-lg overflow-hidden">
 
-    </div>
-    .
+                        <!-- login -->
+                        <div class="col-lg-6 p-5" id="loginSection">
+                            <div class="text-center mb-4">
+                                <!-- <i class="fas fa-user-circle fa-3x text-primary mb-3"></i> -->
+                                <h2 class="form-title">Iniciar Sesion</h2>
+                                <p class="text-muted">Bienvenido de vuelta a TechStore</p>
+                            </div>
+                            <form id="loginForm" onsubmit="handleLogin(event)">
+                                <div class="mb-3">
+                                    <label for="loginEmail" class="form-label">
+                                        <i class="fas fa-envelope me-2"></i>Correo Electronico
+                                    </label>
+                                    <input type="email" class="form-control" name="" id="loginEmail"
+                                        placeholder="tu@mail.com" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="loginPassword" class="form-label">
+                                        <i class="fas fa-lock me-2"></i>Contraseña
+                                    </label>
+                                    <div class="input-group">
+                                        <input type="password" class="form-control" name="" id="loginpassword"
+                                            placeholder="••••••••" required>
+                                        <button class="btn btn-outline-secondary" type="button"
+                                            onclick="togglePasswordVisibility('loginPassword')">
+                                            <i class="fas fa-eye"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="rememberMe">
+                                    <label for="rememberMe" class="form-check-label">Recordarme</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary-custom w-100 mb-3">
+                                    <i class="fas fa-sign-in-alt me-2"></i>Iniciar Sesión
+                                </button>
+                                <div class="text-center">
+                                    <a href="#" class="text-muted small">Olvidaste tu Contraseña</a>
+                                </div>
+
+                            </form>
+                            <hr class="my-4">
+                            <div class="text-center">
+                                <p class="mb-2">No tienes Cuenta?</p>
+                                <button class="btn btn-outline-primary" onclick="toggleForms()">
+                                    Crear Cuenta Nueva
+                                </button>
+                            </div>
+
+
+                        </div>
+
+                        <div class="col-lg-6 p-5 bg-light" id="register-Section">
+                            <div class="text-center mb-4">
+                                <h2 class="form-title">Crear Cuenta</h2>
+                                <p class="text-muted">Unete a TechStore</p>
+                            </div>
+
+                            <form id="registerForm" onsubmit="handleRegister(event)">
+                                <div class="row row-cols-2">
+                                    <div class="mb-2">
+                                        <label for="registerName" class="form-label">
+                                            <i class="fas fa-user me-2"></i>Nombre Completo
+                                        </label>
+                                        <input type="text" class="form-control" id="registerName" placeholder="Ex. Luis"
+                                            required>
+                                    </div>
+
+                                    <div class="mb-2">
+                                        <label for="registerEmail" class="form-label">
+                                            <i class="fas fa-envelope me-2"></i>Correo
+                                        </label>
+                                        <input type="email" class="form-control" id="registerEmail"
+                                            placeholder="tu@mail.com" required>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="registerPassword" class="form-label">
+                                            <i class="fas fa-lock me-2"></i>Contraseña
+                                        </label>
+                                        <div class="input-group">
+                                            <input type="password" class="form-control" id="registerPassword"
+                                                placeholder="••••••••" required minlength="8">
+                                            <button class="btn btn-outline-secondary" type="button"
+                                                onclick="togglePasswordVisibility('loginPassword')">
+                                                <i class="fas fa-eye"></i>
+                                            </button>
+                                        </div>
+                                        <small class="text-muted">Minimo 8 caracteres</small>
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="registerPasswordConfirm" class="form-label">
+                                            <i class="fas fa-lock me-2"></i> Confirmar Contraseña
+
+                                        </label>
+                                        <input type="password" class="form-control" id="registerPasswordConfirm"
+                                            placeholder="••••••••" required minlength="8">
+                                    </div>
+                                    <div class="mb-2">
+                                        <label for="registerPhone" class="form-label">
+                                            <i class="fas fa-phone me-2"></i>Telefono
+                                        </label>
+                                        <input type="tel" class="form-control" id="registerPhone"
+                                            placeholder="111 222 3333" required>
+                                    </div>
+
+
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="acceptTerms" required>
+                                    <label for="acceptTerms" class="form-check-label small">
+                                        Acepto los <a href="#">Terminos y condiciones</a> y la <a href="#">politica de
+                                            privacidad</a>.</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary-custom w-100 mb-3">
+                                    <i class="fas fa-user-plus"></i> Crear cuenta</button>
+
+                                <div class="text-center">
+                                    <p class="mb-2">¿Ya tienes cuenta?</p>
+                                    <button class="btn btn-outline-primary" onclick="toggleForms()">Iniciar
+                                        Sesion</button>
+                                </div>
+
+
+
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer -->
+    <div id="footer"></div>
 
 </body>
+<!-- Bootstrap JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    function loadComponents(id, file) {
+        fetch(file)
+            .then(Res => Res.text())
+            .then(data => {
+                document.getElementById(id).innerHTML = data;
+            });
+
+    }
+    loadComponents("header", "header.html");
+    loadComponents("footer", "footer.html");
+</script>
 
 </html>
