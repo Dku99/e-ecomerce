@@ -1,0 +1,1 @@
+// funcion para alternar entre el login y registro

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Panel de Administracion</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <!-- Font Awesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- estilos propios -->
+    <link rel="stylesheet" href="../CSS/style.css">
+</head>
+
+<body>
+
+    <!-- sidebar -->
+    <div class="admin-sidebar" id="adminSidebar">
+        <div class="brand">
+            <i class="fas fa-microchip me-2"> </i>TechStore
+            <div class="text-white" style="font-size:0.8rem; font-weight: 400; ">Panel Admin</div>
+        </div>
+        <nav class="nav flex-column">
+            <a href="" class="nav-link active" onclick="showSection('dashboard')"><i class="fas fa-chart-line"></i>
+                Dashboard</a>
+            <a href="" class="nav-link" onclick="showSection('product')"><i class="fas fa-box"></i> Productos</a>
+            <a href="" class="nav-link" onclick="showSection('orders')"><i class="fas fa-shopping-bag"></i> Pedidos</a>
+            <a href="" class="nav-link" onclick="showSection('users')"><i class="fas fa-users"></i> Usuarios</a>
+            <a href="" class="nav-link" onclick="showSection('settings')"><i class="fas fa-cog"></i> Configuracion</a>
+            <hr style="border-color:rgba(255,255,255,0.2);">
+            <a href="../index.html" class="nav-link"><i class="fas fa-store"></i> Ver tienda</a>
+            <a href="" class="nav-link" onclick="logout()"><i class="fas fa-sign-out-alt"></i> Cerrar Sesion</a>
+        </nav>
+    </div>
+
+    <!-- main content -->
+    <div class="admin-content">
+        <!-- header -->
+        <div class="admin-header d-flex justify-content-between algin-items-center">
+            <div>
+                <button class="btn-outline-primary d-md-none me-3" onclick="toggleSidebar()">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <h2 class="mb-0 d-inline-block">Panel de Administracion</h2>
+            </div>
+            <div>
+                <span class="me-3" id="adminUserName">Admin</span>
+                <span class="badge bg-success">En linea</span>
+            </div>
+        </div>
+
+        <!-- dashboard Section -->
+        <div id="dashboardSection">
+            <!-- stats cards -->
+            <div class="row mb-4">
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="stat-card primary">
+                        <div class="icon">
+                            <i class="fas fa-box"></i>
+                        </div>
+                        <h3 id="totalProducts">0</h3>
+                        <p class="text-muted mb-0">Total Productos</p>
+                        <small class="text-success">
+                            <i class="fas fa-arrow-up"></i>12% este mes
+                        </small>
+                    </div>
+                </div>
+
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="stat-card success">
+                        <div class="icon">
+                            <i class="fas fa-shopping-cart"></i>
+                        </div>
+                        <h3 id="totalOrders">0</h3>
+                        <p class="text-muted mb-0">Total Ventas</p>
+                        <small class="text-success">
+                            <i class="fas fa-arrow-up"></i>8% este mes
+                        </small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="stat-card warning">
+                        <div class="icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 id="totalUsers">0</h3>
+                        <p class="text-muted mb-0">Usuarios Registrados</p>
+                        <small class="text-success">
+                            <i class="fas fa-arrow-up"></i>24 nuevos
+                        </small>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-3">
+                    <div class="stat-card info">
+                        <div class="icon">
+                            <i class="fas fa-dollar-sign"></i>
+                        </div>
+                        <h3 id="totalRevenue">$0</h3>
+                        <p class="text-muted mb-0">Ingresos Totales`</p>
+                        <small class="text-success">
+                            <i class="fas fa-arrow-up"></i>15% este mes
+                        </small>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- recent Activity -->
+            <div class="row">
+                <div class="col-lg-8">
+                    <div class="admin-table">
+                        <mb-4>Productos Recientes</mb-4>
+                        <div class="table-responsive">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Productos</th>
+                                        <th>Categoria</th>
+                                        <th>Precio</th>
+                                        <th>Stock</th>
+                                        <th>Acciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="recentProductsTable">
+                                    <tr>
+                                        <td colspan="5" class="text-center">Cargando ...</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4">
+                    <div class="admin-table">
+                        <h4 class="mb-4"> Actividad Reciente</h4>
+                        <div id="recentActivity">
+                            <div class="d-flex algin-items-start mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-shopping-cart text-success"></i>
+                                </div>
+                                <div>
+                                    <strong>Nueva Venta</strong>
+                                    <p class="text-muted small mb-0">Hace 5 minutos</p>
+                                </div>
+                            </div>
+                            <div class="d-flex algin-items-start mb-3">
+                                <div class="me-3">
+                                    <i class="fas fa-box text-warning"></i>
+                                </div>
+                                <div>
+                                    <strong>Stock bajo</strong>
+                                    <p class="text-muted small mb-0">Hace 1 hora</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="productsSection">
+            <div class="admin-table">
+                <div class="d-flex justify-content-between algin-items-center mb-4">
+                    <h4 class="mb-0">Gestion de Productos</h4>
+                    <button class="btn btn-primary-custom" onclick="showAddProductModal()">
+                        <i class="fas fa-plus me-2"></i>Agregar producto
+                    </button>
+                </div>
+
+                <div class="mb-3">
+                    <input type="text" class="form-control" placeholder="Buscar productos..."
+                        onkeyup="filterProducts(this.value)">
+                </div>
+
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Categoria</th>
+                                <th>Precio</th>
+                                <th>Stock</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="productsTableBody">
+                            <tr>
+                                <td colspan="7" class="text-center">Cargando productos...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- orders section -->
+        <div id="ordersSection">
+            <div class="admin-table">
+                <h4 class="mb-4">Gestion de Pedidos</h4>
+                <div class="table-responsive">
+                    <table class="table table-hover">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Cliente</th>
+                                <th>Fecha</th>
+                                <th>Total</th>
+                                <th>Estado</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="ordersTableBody">
+                            <tr>
+                                <td class="text-center" colspan="6">No hay pedidos registrados</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <div id="userSection">
+            <div class="admin-table">
+                <h4 class="mb-4">Gestion de Usuarios</h4>
+                <div class="table-responsive">
+                    <table class="table table-responsive">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Nombre</th>
+                                <th>Email</th>
+                                <th>Telefono</th>
+                                <th>Registro</th>
+                                <th>Tipo</th>
+                                <th>Acciones</th>
+                            </tr>
+                        </thead>
+                        <tbody id="usersTableBody">
+                            <tr>
+                                <td class="text-center" colspan="7">Cargando usuarios...</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- sectings section -->
+        <div id="settingSection">
+            <div class="admin-table">
+                <h4 class="mb-4">Configuracion</h4>
+                <p class="text-muted">Seccion de configuracion proximamente... </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="productModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="productModalTitle">Agregar Producto</h5>
+                    <button class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <form action="" id="productForm">
+                        <input type="hidden" name="" id="productId">
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <label for="productName" class="form-label">Nombre del producto *</label>
+                                <input type="text" class="form-control" id="productName" required>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <label for="productoCategory" class="form-label"> Categoria *</label>
+                                <select name="" class="form-select" id="productCategory" required>
+                                    <option value="">Seleccionar ...</option>
+                                    <option value="procesadores">Procesadores</option>
+                                    <option value="graficas">Tarjetas Graficas</option>
+                                    <option value="memoria">Memoria RAM</option>
+                                    <option value="almacenamiento"> Almacenamiento</option>
+                                    <option value="monitores">Monitores</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6 mb-3"><label for="productPrice" class="form-label">Precio(MXN)
+                                    *</label><input type="number" class="form-control" required id="productPrice"
+                                    required min="0" step="0.5"></div>
+                            <div class="col-md-6 mb-3"><label for="productStock" class="form-label">Stock
+                                    *</label><input type="number" class="form-control" required id="productStock"
+                                    min="0"></div>
+                            <div class="col-md-6 mb-3"><label for="productBrand" class="form-label">Marca</label><input
+                                    type="text" class="form-control" id="productBrand"></div>
+                            <div class="col-md-6 mb-3"><label for="productRating" class="form-label">Rating
+                                    (1-5)</label><input type="number" class="form-control" required id="productRating"
+                                    min="1" max="5" value="5"></div>
+                            <div class="col-md-12 mb-3"><label for="productDescription" class="form-label">Descripcion
+                                    *</label><textarea name="" class="form-control" id="productDescription" rows="3"
+                                    required></textarea>
+                            </div>
+                            <div class="col-md-12 mb-3"><label for="productIcon" class="form-label">Icono/
+                                    imagen</label><input type="text" class="form-control" required></div>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-primary-custom" onclick="saveProduct()">Guardar
+                        Producto</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <script src="../JS/admin.js"></script>
+    <script src="../JS/auth.js"></script>
+    <script src="../JS/main.js"></script>
+
+</body>
+
+
+</html>
